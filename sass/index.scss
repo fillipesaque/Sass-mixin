@@ -1,0 +1,30 @@
+@mixin container-style($color, $font-size, $font-family) {
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+}
+
+.container {
+  h1 {
+    /* Jeito normal 3 linhas de codigo para estilizar o h1 */
+    font-size: 38px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* usando @mixin 1 linha de codigo  */
+    @include container-style(yellow, 40px, Arial);
+  }
+  p {
+    /* Jeito normal 3 linhas de codigo para estilizar o p */
+    color: blue;
+    font-size: 18px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+    /* usando @mixin 1 linha de codigo  */
+    @include container-style(black, 20px, Gothic);
+  }
+}
+
+/* Aplicando o @mixin como se fosse uma classe/obj js vc seta as propriedades css dps seus valores 
+    em seguida chama ela com o @include e o nome do mixin ela te retornara tipo uma instancia do mixin para as alteraçoes 
+*/
